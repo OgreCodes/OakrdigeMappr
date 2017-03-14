@@ -22,7 +22,7 @@ trailSet
 			model: trail, 
 			map: trailMap
 		});
-		$("#trail-tags").append(trailView.$el);
+		$("#trail-tags .trails").append(trailView.$el);
 		trail.on("change:polyline", trailMap.addTrail, trailMap);
 	});
 
