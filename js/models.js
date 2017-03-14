@@ -21,7 +21,7 @@ var TrailModel = Backbone.Model.extend({
 		        	.map(function(coord) { 
 		        		return [coord.attributes.lat.value, coord.attributes.lon.value]; 
 		        	});
-				thisTrail.set("polyline", L.polyline(points, {color: 'blue'}));
+				thisTrail.set("polyline", L.polyline(points, defaultLine));
 			}
 		});
 	}

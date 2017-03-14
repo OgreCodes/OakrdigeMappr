@@ -7,10 +7,10 @@ var TrailMap = L.Map.extend({
 	},
 	activate: function(polyline) {
 		this.trailSet.each(function(trail) {
-			trail.get("polyline").setStyle({color: "#533", opacity: 0.7});
+			trail.get("polyline").setStyle(disabledLine);
 		});
 		polyline
-			.setStyle({color: "#F00", opacity: 1})
+			.setStyle(activeLine)
 			.bringToFront();
 		this.flyToBounds(polyline.getBounds(), {paddingBottomRight: [150,0]});
 	}
