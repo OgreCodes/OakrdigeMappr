@@ -1,0 +1,46 @@
+
+/* Add a height to the base map element */
+body {
+	margin: 0
+}
+
+h1, h3 {
+	text-align: center;
+}
+
+h1 {
+	font-size: 120%;
+}
+
+h3 {
+	font-size: 110%;
+}
+#mapid { height: 580px;}
+#trail-tags {
+	position: absolute;
+	right: 2px;
+	top: 2px;
+	width: 175px;
+	border: 1px solid black;
+	z-index: 999;
+	background: rgba(255, 255, 255, .7);
+}
+
+a.trail-button {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 12px 0;
+	font-size: 18px;
+}	
+
+a:hover.trail-button {
+	background: rgba(0, 0, 255, .2);
+}	
+
+@media only screen and (max-width: 500px) {
+	#trail-tags {
+		width: 130px;
+		font-size: 10px;
+	}
+}
