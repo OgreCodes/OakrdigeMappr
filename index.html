@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Oakridge, Oregon</title>
+  <meta name="description" content="A Simple Trail Mapping Example.">
+  <meta name="author" content="Ogre">
+
+	<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/mappr.css">
+
+  
+</head>
+
+<body>
+	<div id="mapid"></div>
+	<div id="trail-tags">
+		<h1>Oakridge Oregon</h1>
+		<h3>The Essentials</h3>
+		<hr>
+		<div class="trails"></div>
+		<p class="note">Click on a trail to zoom in</p>
+	</div>
+
+	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+	<script src="vendor/underscore-min.js"></script>
+	<script src="vendor/backbone-min.js"></script>
+	<script src="vendor/leaflet/leaflet.js"></script>
+  <script src="js/models.js"></script>
+  <script src="routes/oakridge.js"></script>
+  <script src="js/trail_view.js"></script>
+  <script src="js/trail_map.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
