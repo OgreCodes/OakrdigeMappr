@@ -2,8 +2,6 @@
 
 
 
-$("#mapid").height($(window).height());
-
 /* Create the base map, set the view and add the trailSet to it */
 var trailMap = new TrailMap('mapid');
 trailMap.setView(trailSet.coordinates, 11);
