@@ -3,7 +3,11 @@
 
 var TrailMap = L.Map.extend({
 	addTrail: function(trail) {
-		trail.get("polyline").addTo(this);
+		var polyline = trail.get("polyline"), thisMap = this;
+		polyline.addTo(this);
+		polyline.on("click", function(e) {
+			thisMap.activate(polyline);
+		});
 	},
 	activate: function(polyline) {
 		this.trailSet.each(function(trail) {
