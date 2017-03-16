@@ -6,7 +6,6 @@ Then creates a Leaflet polyline from that set of points.
 
 */
 
-
 var TrailModel = Backbone.Model.extend({
 	initialize: function(options) {
 		// get the raw GPX file and convert it to a polyline
@@ -18,12 +17,17 @@ var TrailModel = Backbone.Model.extend({
 		    success: function (xml) {
 		    	var rawPoints = xml.getElementsByTagName("trkpt");
 		        var points = _(rawPoints)
-		        	.map(function(coord) { 
-		        		return [coord.attributes.lat.value, coord.attributes.lon.value]; 
+		        	.map(function(coord) {
+						elevation=coord.getElementsByTagName("ele")[0].childNodes[0].nodeValue;
+		        		return L.latLng(coord.attributes.lat.value, coord.attributes.lon.value, elevation); 
 		        	});
 				thisTrail.set("polyline", L.polyline(points, defaultLine));
 			}
 		});
+	},
+	getElevation: function(latlon) {
+		return 400;
+
 	}
 });
 

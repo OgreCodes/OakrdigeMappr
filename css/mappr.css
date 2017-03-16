@@ -20,6 +20,7 @@ h1 {
 
 h3 {
 	margin-top: 0px;
+	margin-bottom: 2px;
 	font-size: 110%;
 	font-weight: normal;
 }
@@ -58,3 +59,32 @@ a:hover.trail-button {
 		font-size: 10px;
 	}
 }
+
+/* Chart Styles */
+#elevation-profile {
+	position: absolute;
+	left: 2px;
+	bottom: 2px;
+	height: 150px;
+	width: 40%;
+	z-index: 999;
+	display: none;
+	background-color: rgba(255, 255, 255, 0.6)
+}
+
+#elevation-profile-chart {
+	max-height: 150px;
+	max-width: 100%;
+}
+
+
+.ct-series-a .ct-bar { 
+	stroke: rgba(255,150,0,0.7);
+	stroke-width: 2px;
+}
+
+.ct-grid {
+	stroke: rgba(0,0,0,0.1);
+	stroke-width: 0px;
+}
+

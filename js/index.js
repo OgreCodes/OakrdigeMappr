@@ -8,7 +8,7 @@ trailMap.setView(trailSet.coordinates, 11);
 trailMap.trailSet = trailSet;
 
 /* Add the topo tiles */
-var OpenTopoMap = L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png?a=1', {
+var OpenTopoMap = L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png?a=2', {
 	maxZoom: 17,
 	attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 }).addTo(trailMap);
@@ -23,4 +23,5 @@ trailSet
 		$("#trail-tags .trails").append(trailView.$el);
 		trail.on("change:polyline", trailMap.addTrail, trailMap);
 	});
+
 

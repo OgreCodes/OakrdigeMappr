@@ -17,6 +17,11 @@ var TrailMap = L.Map.extend({
 			.setStyle(activeLine)
 			.bringToFront();
 		this.flyToBounds(polyline.getBounds(), {paddingBottomRight: [150,0]});
+		if (typeof(this.elevationProfile) === "undefined") {
+			this.elevationProfile = new ElevationProfile({el: "#elevation-profile", polyline: polyline});
+		} else {
+			this.elevationProfile.setSource(polyline);
+		}
 	}
 });
 
