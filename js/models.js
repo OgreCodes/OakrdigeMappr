@@ -18,8 +18,9 @@ var TrailModel = Backbone.Model.extend({
 		    	var rawPoints = xml.getElementsByTagName("trkpt");
 		        var points = _(rawPoints)
 		        	.map(function(coord) {
-						elevation=coord.getElementsByTagName("ele")[0].childNodes[0].nodeValue;
-		        		return L.latLng(coord.attributes.lat.value, coord.attributes.lon.value, elevation); 
+		        		// get elevation and convert to feet.
+						elevation=coord.getElementsByTagName("ele")[0].childNodes[0].nodeValue * 3.28084; 
+		        		return L.latLng(coord.attributes.lat.value, coord.attributes.lon.value, elevation ); 
 		        	});
 				thisTrail.set("polyline", L.polyline(points, defaultLine));
 			}

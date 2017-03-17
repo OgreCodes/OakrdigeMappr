@@ -1,51 +1,59 @@
 
-/* Add a height to the base map element */
 body {
 	margin: 0;
 	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+/* Ensure the map is full screen, we'll use transparent overlays to display content over the top. */
 html, body, #mapid {
     height: 100%;
     width: 100%;
 }
 
-h1, h3 {
-	text-align: center;
-}
-
 h1 {
+	text-align: center;
 	font-size: 120%;
 }
 
 h3 {
-	margin-top: 0px;
-	margin-bottom: 2px;
+	text-align: center;
+	margin: 0px 0 2px;
 	font-size: 110%;
 	font-weight: normal;
 }
 
+/* a smaller font for short notes and comments */
 .note {
 	font-size: 80%;
-	color: #55a;
+	color: #ff4;
 	text-align: center;
 }
 
-#trail-tags {
+/* Semi transparent overlay for trail picker and elevation profile */
+.overlay {
 	position: absolute;
+	border: 1px solid black;
+	z-index: 999;
+	background: rgba(0, 0, 0, .4);
+	-webkit-backdrop-filter:  blur(3px) grayscale(100%);
+	color: white;
+
+}
+
+/* Side panel for trail picker and page title */
+#trail-tags {
 	right: 2px;
 	top: 2px;
 	width: 175px;
-	border: 1px solid black;
-	z-index: 999;
-	background: rgba(255, 255, 255, .7);
 }
 
+
 a.trail-button {
+	cursor: pointer;
 	display: block;
 	width: 100%;
 	text-align: center;
-	padding: 12px 0;
+	padding: 10px 0;
 	font-size: 18px;
 }	
 
@@ -53,23 +61,18 @@ a:hover.trail-button {
 	background: rgba(0, 0, 255, .2);
 }	
 
-@media only screen and (max-width: 500px) {
-	#trail-tags {
-		width: 130px;
-		font-size: 10px;
-	}
-}
-
 /* Chart Styles */
 #elevation-profile {
-	position: absolute;
 	left: 2px;
 	bottom: 2px;
 	height: 150px;
 	width: 40%;
-	z-index: 999;
 	display: none;
-	background-color: rgba(255, 255, 255, 0.6)
+}
+
+small {
+	font-size: 65%;
+	opacity: 0.8
 }
 
 #elevation-profile-chart {
@@ -77,14 +80,25 @@ a:hover.trail-button {
 	max-width: 100%;
 }
 
-
 .ct-series-a .ct-bar { 
-	stroke: rgba(255,150,0,0.7);
-	stroke-width: 2px;
+	stroke: rgba(255,255,255,0.3);
+	stroke-width: 1px;
 }
 
 .ct-grid {
-	stroke: rgba(0,0,0,0.1);
-	stroke-width: 0px;
+	stroke: rgba(255,255,50,0.3);
+	stroke-width: 1px;
+}
+
+.ct-label {
+	color: #ff5;
+}
+
+/* Tweak things a bit for smaller displays. */
+@media only screen and (max-width: 500px) {
+	#trail-tags {
+		width: 130px;
+		font-size: 10px;
+	}
 }
 
